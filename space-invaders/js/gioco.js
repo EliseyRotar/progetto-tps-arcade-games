@@ -24,8 +24,8 @@ const stato = { attivo: false, inPausa: false, punteggio: 0, vite: 3, livello: 1
 let impostazioni = difficolta.normale;
 let recordMondiale = 0;
 
-const navicella = { x: 275, y: 385, larghezza: 50, altezza: 58, vel: 4, esplosione: 0 };
-const ufo = { attivo: false, x: 0, y: 30, larghezza: 37, altezza: 38, direzione: 1, timer: 450 };
+const navicella = { x: 277, y: 410, larghezza: 45, altezza: 33, vel: 4, esplosione: 0 };
+const ufo = { attivo: false, x: 0, y: 36, larghezza: 48, altezza: 24, direzione: 1, timer: 450 };
 
 let proiettili = [];
 let bombe = [];
@@ -71,9 +71,9 @@ function creaInvasori() {
             invasori.push({
                 riga: riga,
                 x: 60 + colonna * 60,
-                y: 80 + riga * 34,
-                larghezza: alieno.w,
-                altezza: alieno.h,
+                y: 70 + riga * 34,
+                larghezza: alieno.w * SCALA,
+                altezza: alieno.h * SCALA,
                 vivo: true
             });
         }
@@ -85,7 +85,13 @@ function creaInvasori() {
 function creaScudi() {
     scudi = [];
     for (let k = 0; k < 4; k++) {
-        scudi.push({ x: 55 + k * 140, y: 315, larghezza: 50, altezza: 59, vita: 5 });
+        for (let riga = 0; riga < 4; riga++) {
+            for (let colonna = 0; colonna < 8; colonna++) {
+                // il buco in basso al centro di ogni scudo
+                if (riga === 3 && colonna >= 2 && colonna <= 5) continue;
+                scudi.push({ x: 40 + k * 144 + colonna * 12, y: 355 + riga * 12, larghezza: 12, altezza: 12, vita: 3 });
+            }
+        }
     }
 }
 
@@ -128,7 +134,7 @@ function muoviNavicella() {
 
     // un solo proiettile alla volta
     if (tastiPremuti[' '] && proiettili.length === 0) {
-        proiettili.push({ x: navicella.x + 20, y: navicella.y, larghezza: 10, altezza: 26 });
+        proiettili.push({ x: navicella.x + 20, y: navicella.y - 10, larghezza: 4, altezza: 14 });
         suona(760, 0.08);
     }
 }
@@ -146,7 +152,7 @@ function muoviBombe() {
         const vivi = invasori.filter(function (inv) { return inv.vivo; });
         if (vivi.length > 0) {
             const inv = vivi[Math.floor(Math.random() * vivi.length)];
-            bombe.push({ x: inv.x + inv.larghezza / 2, y: inv.y + inv.altezza, larghezza: 10, altezza: 26 });
+            bombe.push({ x: inv.x + inv.larghezza / 2, y: inv.y + inv.altezza, larghezza: 4, altezza: 14 });
         }
     }
 
@@ -281,7 +287,7 @@ function avviaPartita() {
     stato.vite = impostazioni.vite;
     stato.livello = 1;
 
-    navicella.x = 275;
+    navicella.x = 277;
     navicella.esplosione = 0;
     proiettili = [];
     bombe = [];

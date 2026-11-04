@@ -40,7 +40,7 @@ Dal pannello si sceglie la difficoltà (facile / normale / difficile) e a fine p
     │   ├── gioco.js             ← logica: movimento, collisioni, tasti
     │   └── classifica.js        ← parte asincrona (async/await)
     ├── dati/highscores.json     ← classifica di partenza
-    ├── img/                     ← navicelle, scudi, laser e sfondo
+    ├── img/sprites.png          ← sprite pixel art
     ├── fonts/                   ← font pixel
     └── docs/                    ← screenshot
 ```
@@ -67,8 +67,7 @@ Dal pannello si sceglie la difficoltà (facile / normale / difficile) e a fine p
 
 | Asset | Autore | Licenza |
 |---|---|---|
-| Navicelle, scudi e laser ("Alien UFO pack") | Kenney | CC0 |
-| Sfondo stellato | Sauer2 (OpenGameArt.org) | CC0 |
+| Sprite "Alternate Space Invaders" | WaffleKilometer (OpenGameArt.org) | CC0 |
 | Font Press Start 2P | CodeMan38 | SIL OFL |
 
 Il codice è scritto da noi.
