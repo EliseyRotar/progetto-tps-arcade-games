@@ -22,7 +22,7 @@ async function caricaClassifica() {
     mostraMessaggio('Caricamento in corso...', 'avviso');
 
     try {
-        const risposta = await fetch('highscores.json');
+        const risposta = await fetch('dati/highscores.json');
         if (!risposta.ok) throw new Error('HTTP ' + risposta.status);
 
         const dati = await risposta.json();
