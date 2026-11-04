@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders — Progetto TPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SPACE INVADERS</h1>
+        <p>Progetto TPS — Classe 5BI</p>
+    </header>
+
+    <main>
+        <div class="schermo">
+            <canvas id="schermo" width="600" height="450"></canvas>
+
+            <div id="overlay-inizio" class="overlay">
+                <h3>SPACE INVADERS</h3>
+                <p>Difendi la Terra dall'invasione!</p>
+                <button id="bottone-avvia">AVVIA PARTITA</button>
+            </div>
+
+            <div id="overlay-pausa" class="overlay nascosto">
+                <h3>PAUSA</h3>
+                <button id="bottone-riprendi">RIPRENDI</button>
+            </div>
+
+            <div id="overlay-fine" class="overlay nascosto">
+                <h3>GAME OVER</h3>
+                <p id="punteggio-finale"></p>
+                <button id="bottone-riavvia">GIOCA ANCORA</button>
+            </div>
+        </div>
+
+        <div class="pannello">
+            <div>
+                <h4>DIFFICOLTÀ</h4>
+                <select id="difficolta">
+                    <option value="facile">FACILE</option>
+                    <option value="normale" selected>NORMALE</option>
+                    <option value="difficile">DIFFICILE</option>
+                </select>
+            </div>
+
+            <div>
+                <h4>COMANDI</h4>
+                <ul>
+                    <li>← → muovi la nave</li>
+                    <li>SPAZIO spara</li>
+                    <li>P pausa</li>
+                </ul>
+                <button id="bottone-pausa">PAUSA</button>
+            </div>
+
+            <div>
+                <h4>MESSAGGI DI STATO</h4>
+                <div id="area-messaggi"></div>
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <h2>CLASSIFICA</h2>
+        <ol id="lista-classifica"></ol>
+
+        <form id="form-salva">
+            <h3>SALVA IL TUO PUNTEGGIO</h3>
+            <input type="text" id="nome-giocatore" placeholder="Il tuo nome" maxlength="15" required>
+            <input type="hidden" id="punteggio-nascosto" value="0">
+            <button type="submit">SALVA</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Elisey Rotar, Verde Giulio Enea — Classe 5BI</p>
+        <p>Sprite "Alternate Space Invaders" di WaffleKilometer (CC0) · Sfondo di Sauer2 (CC0) · Font Press Start 2P (OFL)</p>
+    </footer>
+
+    <script src="disegni.js"></script>
+    <script src="gioco.js"></script>
+    <script src="classifica.js"></script>
+</body>
+</html>

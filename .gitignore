@@ -1,0 +1,12 @@
+# Windows / macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Progetto separato con repo git propria (github.com/Alex3725/python-space-shooter)
+python-space-shooter/
+space-invaders/docs/chat-opencode.md

@@ -1,0 +1,11 @@
+[
+  { "nome": "ACE", "punteggio": 1500, "data": "1/10/2026" },
+  { "nome": "NOVA", "punteggio": 1200, "data": "4/10/2026" },
+  { "nome": "ZETA", "punteggio": 900, "data": "10/10/2026" },
+  { "nome": "ORION", "punteggio": 700, "data": "15/10/2026" },
+  { "nome": "VEGA", "punteggio": 500, "data": "14/10/2026" },
+  { "nome": "ELI6", "punteggio":6767, "data": "14/10/2026" },
+  { "nome": "ENEA", "punteggio": 6767, "data": "14/10/2026" },
+  { "nome": "MANUEL", "punteggio": 122, "data": "14/10/2026" },
+  { "nome": "CASPER", "punteggio": 1195, "data": "14/10/2026" }
+]
