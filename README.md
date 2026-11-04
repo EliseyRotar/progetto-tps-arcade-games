@@ -1,12 +1,41 @@
-# Progetto TPS — Space Invaders
+<div align="center">
 
-Ricreazione di **Space Invaders** come pagina web interattiva, in **HTML, CSS e JavaScript puro**, senza framework.
+# SPACE INVADERS
 
-**Team classe 5BI** — Elisey Rotar · Verde Giulio Enea
+**Il classico arcade del 1978, ricreato in HTML, CSS e JavaScript puro**
+
+[![Gioca online](https://img.shields.io/badge/GIOCA%20ONLINE-33ff33?style=for-the-badge&labelColor=000000)](https://eliseyrotar.github.io/progetto-tps-arcade-games/)
+![HTML](https://img.shields.io/badge/HTML-ff4040?style=flat-square&labelColor=000000)
+![CSS](https://img.shields.io/badge/CSS-33ff33?style=flat-square&labelColor=000000)
+![JavaScript](https://img.shields.io/badge/JavaScript-ffff33?style=flat-square&labelColor=000000)
+![Nessun framework](https://img.shields.io/badge/framework-nessuno-ffffff?style=flat-square&labelColor=000000)
+
+Progetto TPS · Classe 5BI · **Elisey Rotar** e **Verde Giulio Enea**
 
 ![Partita in corso](space-invaders/docs/screenshot-gioco.png)
 
-## Come eseguire
+</div>
+
+## Il gioco
+
+- Sprite pixel art su fondo nero, con la pellicola colorata dei cabinet originali
+- Invasori che accelerano quando ne restano pochi, UFO bonus, scudi che si consumano
+- Livelli che si ripetono sempre più veloci
+- Tre difficoltà: **facile**, **normale**, **difficile**
+- Classifica con salvataggio del punteggio (caricamento e salvataggio asincroni)
+- Suoni con Web Audio e messaggi di stato per ogni operazione
+
+## Come giocare
+
+**Online:** https://eliseyrotar.github.io/progetto-tps-arcade-games/
+
+| Tasto | Azione |
+|---|---|
+| `←` `→` | muovi la navicella |
+| `SPAZIO` | spara (un colpo per volta) |
+| `P` o bottone **PAUSA** | pausa / riprendi |
+
+## Eseguire in locale
 
 La classifica viene caricata con `fetch`, quindi serve un server locale (il doppio clic sul file non basta):
 
@@ -16,22 +45,14 @@ python -m http.server 8000
 # poi apri http://localhost:8000
 ```
 
-## Comandi
-
-| Tasto | Azione |
-|---|---|
-| `←` `→` | muovi la navicella |
-| `SPAZIO` | spara (un colpo per volta) |
-| `P` o bottone **PAUSA** | pausa / riprendi |
-
-Dal pannello si sceglie la difficoltà (facile / normale / difficile) e a fine partita si salva il punteggio in classifica.
-
 ## Struttura
 
 ```
 .
+├── index.html                   ← porta alla cartella del gioco (GitHub Pages)
 ├── README.md
-├── consegna/                    ← traccia (PDF) e tabella di monitoraggio
+├── LICENSE
+├── consegna/                    ← traccia, tabella di monitoraggio e presentazione
 └── space-invaders/
     ├── index.html               ← la pagina
     ├── style.css                ← lo stile
@@ -40,7 +61,7 @@ Dal pannello si sceglie la difficoltà (facile / normale / difficile) e a fine p
     │   ├── gioco.js             ← logica: movimento, collisioni, tasti
     │   └── classifica.js        ← parte asincrona (async/await)
     ├── dati/highscores.json     ← classifica di partenza
-    ├── img/sprites.png          ← sprite pixel art
+    ├── img/                     ← sprite e favicon
     ├── fonts/                   ← font pixel
     └── docs/                    ← screenshot
 ```
@@ -61,7 +82,7 @@ Dal pannello si sceglie la difficoltà (facile / normale / difficile) e a fine p
 ## Sincrono e asincrono
 
 - **Sincrono** (`gioco.js`, `disegni.js`): un ciclo `requestAnimationFrame` aggiorna e ridisegna il gioco circa 60 volte al secondo.
-- **Asincrono** (`classifica.js`): `await fetch('dati/highscores.json')` carica la classifica e il salvataggio simula 800 ms di attesa, con i messaggi di stato mentre si aspetta.
+- **Asincrono** (`classifica.js`): `await fetch('dati/highscores.json')` carica la classifica e il salvataggio simula 800 ms di attesa, mostrando i messaggi di stato mentre si aspetta.
 
 ## Crediti
 
@@ -70,4 +91,4 @@ Dal pannello si sceglie la difficoltà (facile / normale / difficile) e a fine p
 | Sprite "Alternate Space Invaders" | WaffleKilometer (OpenGameArt.org) | CC0 |
 | Font Press Start 2P | CodeMan38 | SIL OFL |
 
-Il codice è scritto da noi.
+Il codice è scritto da noi ed è rilasciato con licenza MIT (vedi [LICENSE](LICENSE)).
