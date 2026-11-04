@@ -10,3 +10,6 @@ __pycache__/
 # Progetto separato con repo git propria (github.com/Alex3725/python-space-shooter)
 python-space-shooter/
 space-invaders/docs/chat-opencode.md
+
+# File temporanei di LibreOffice
+.~lock.*
